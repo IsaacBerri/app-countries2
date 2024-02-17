@@ -1,11 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import CountryCard from "../components/CountryCard";
-import { ContextGetCountryDB } from "../context/ContextGetCountryDB";
-import { usePagination } from "../hooks/usePagination";
 import Pagination from "../components/Pagination";
+import { usePagination } from "../hooks/usePagination";
+import { ContextRenderCountryInfo } from "../context/ContextRenderCountryInfo";
+import { ContextGetCountriesDB } from "../context/ContextGetCountriesDB";
+import RenderCountryInfo from "../components/RenderCountryInfo";
 
 const ContainerCountries = () => {
-  const { countries } = useContext(ContextGetCountryDB);
+  const { countries, update, setUpdate } = useContext(ContextGetCountriesDB);
+  const { render } = useContext(ContextRenderCountryInfo);
+  useEffect(() => {
+    setUpdate(!update);
+  }, [])
   const {
     currentCountries,
     nextPage,
@@ -19,9 +25,10 @@ const ContainerCountries = () => {
     <>
       <section className="containerCountries">
         {currentCountries.map((country) => (
-          <CountryCard key={country.code} country={country} />
+          <CountryCard key={country.code} country={country}/>
         ))}
       </section>
+      {render && <RenderCountryInfo/>}
       <Pagination
         prevPage={prevPage}
         nextPage={nextPage}

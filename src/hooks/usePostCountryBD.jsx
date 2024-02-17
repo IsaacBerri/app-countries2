@@ -1,12 +1,13 @@
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function usePostCountryBD() {
   const handlePostCountry = async (country) => {
     try {
-      const response = await fetch(`http://localhost:3001/countries/${country.code}`);
+      const response = await fetch(`http://localhost:3001/countries/country/${country.code}`);
       if (response.ok) {
         const existingCountry = await response.json();
-        alert(`El país con código ${country.code} ya existe en la base de datos`);
+        toast.warn(`The country with code ${country.code} already exists in the database`);
       } else {
         fetch("http://localhost:3001/countries", {
           method: "POST",
@@ -20,7 +21,7 @@ export function usePostCountryBD() {
             return response.json();
           })
           .then((data) => {
-            alert("País creado con éxito");
+            toast.success("Successfully created country")
             console.log("Respuesta de la API:", data);
           })
           .catch((error) => {
@@ -34,6 +35,6 @@ export function usePostCountryBD() {
   }
 
   return {
-    handlePostCountry
+    handlePostCountry,
   };
 }

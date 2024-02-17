@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React  from 'react'
 import '../styles/Home.css'
 import HeaderHome from '../components/HeaderHome'
 import ContainerCountries from '../containers/ContainerCountries'

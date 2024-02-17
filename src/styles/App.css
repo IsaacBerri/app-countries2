@@ -43,6 +43,24 @@
   color: black;
 }
 
+.headerInput {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.headerInput #codeCountry {
+  width: 200px;
+  height: 30px;
+  background-color: #EEEEEE;
+  color: black;
+  border: 2px solid grey;
+  text-align: center;
+}
+
 .logo {
   height: 140px;
   height: 140px;

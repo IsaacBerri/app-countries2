@@ -1,0 +1,18 @@
+.manageCountry {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    background-color: #E3F4FF;
+    padding: 20px;
+}
+
+.manageCountry input {
+    width: 200px;
+    height: 30px;
+    background-color: #EEEEEE;
+    color: black;
+    border: 2px solid grey;
+    text-align: center;
+}

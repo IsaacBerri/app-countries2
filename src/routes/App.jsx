@@ -1,5 +1,6 @@
 import "../styles/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
 import Navbar from "./../components/Navbar";
 import Home from "../pages/Home";
 import CreateCountry from "../pages/CreateCountry";
@@ -15,6 +16,7 @@ function App() {
         <Route path="/manage-country" element={<ManageCountry />} />
         <Route path="*" element={<div>Not found</div>} />
       </Routes>
+      <ToastContainer />
     </BrowserRouter>
   );
 }

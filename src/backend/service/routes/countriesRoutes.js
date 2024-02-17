@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
         })
 })
 
-router.get("/:code", (req, res) => {
+router.get("/country/:code", (req, res) => {
     const { code } = req.params;
     CountryModel.findOne({ "code": code })
     .then((country) => {
@@ -38,6 +38,18 @@ router.post("/", (req, res) => {
     CountryModel.create(body)
         .then((data) => {
             res.json(data)
+        })
+})
+
+router.delete("/country/:code", (req, res) => {
+    const { code } = req.params;
+    CountryModel.deleteOne({ "code": code })
+        .then((country) => {
+            if (country) {
+                res.status(200).json({ message: "Pais eliminado" });
+            } else {
+                res.status(400).json({ error: "Pais no encontrado" });
+            }
         })
 })
 

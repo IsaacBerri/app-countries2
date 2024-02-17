@@ -1,16 +1,22 @@
 import React, { useContext, useState } from "react";
 import { ContextGetCountryAPI } from "../context/ContextGetCountryAPI";
+import { ContextGetCountryDB } from "../context/ContextGetCountryDB";
 
-const HeaderCreateCountry = () => {
-  const [ inputValue, setInputValue ] = useState("");
+const HeaderInput = ({ setType }) => {
+  const [inputValue, setInputValue] = useState("");
   const { setCode } = useContext(ContextGetCountryAPI);
+  const { handleConsult } = useContext(ContextGetCountryDB);
 
   const handleClick = () => {
-    setCode(inputValue.toUpperCase());
+    if (setType === "DB") {
+      handleConsult(inputValue.toUpperCase());
+    } else if (setType === "API") {
+      setCode(inputValue.toUpperCase());
+    }
   };
 
   return (
-    <header className="headerCreateCountry">
+    <header className="headerInput">
       <label htmlFor="codeCountry">Country code</label>
       <input
         id="codeCountry"
@@ -25,4 +31,4 @@ const HeaderCreateCountry = () => {
   );
 };
 
-export default HeaderCreateCountry;
+export default HeaderInput;

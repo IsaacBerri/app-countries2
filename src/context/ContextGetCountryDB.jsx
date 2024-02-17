@@ -1,39 +1,27 @@
+import { toast } from "react-toastify";
 import { createContext, useEffect, useState } from "react";
 
 export const ContextGetCountryDB = createContext();
 
-export function ProviderGetCountryDB ({ children }){
-  const [filter, setFilter] = useState("");
-  const [countries, setCountries] = useState([]);
-  const [codeContinent, setCodeContinent] = useState("All");
-  const [filteredCountries, setFilteredCountries] = useState([]);
+export const ProviderGetCountryDB = ({ children }) => {
+  const [country, setCountry] = useState({});
 
-  useEffect(() => {
-    if(codeContinent === "All") {
-      fetch("http://localhost:3001/countries")
-        .then((response) => response.json())
-        .then((data) => setCountries(data));
-    } else {
-      fetch(`http://localhost:3001/countries/continent/${codeContinent}`)
-        .then((response) => response.json())
-        .then((data) => setCountries(data));
-    }
-  }, [codeContinent]);
-
-
-  useEffect(() => {
-    const filtered = countries.filter(country =>
-      country.name.toLowerCase().startsWith(filter.toLowerCase())
-    );
-    setFilteredCountries(filtered);
-  }, [filter, countries]);
+  function handleConsult(codeCountry) {
+    fetch(`http://localhost:3001/countries/country/${codeCountry}`)
+      .then((response) => {
+        if (!response.ok) {
+          toast.error("The country is not found in the database");
+        }
+        return response.json();
+      })
+      .then((data) => setCountry(data));
+  }
 
   return (
     <ContextGetCountryDB.Provider
       value={{
-        countries: filteredCountries,
-        setFilter,
-        setCodeContinent,
+        country,
+        handleConsult,
       }}
     >
       {children}

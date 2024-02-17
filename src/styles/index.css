@@ -4,6 +4,21 @@
   padding: 0;
 }
 
+*::-webkit-scrollbar {
+  height: 7px;
+  width: 7px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background-color: #DFE9EB;
+}
+
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #121211;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
