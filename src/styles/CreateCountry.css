@@ -50,7 +50,7 @@
 
 @media screen and (max-width: 500px) {
 
-    .headerCreateCountry {
+    .headerInput {
         flex-direction: column;
     }
 

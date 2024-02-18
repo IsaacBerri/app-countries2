@@ -134,6 +134,12 @@
     border-radius: 20px;
     box-shadow: 0 0 10px grey;
     overflow: hidden;
+    cursor: pointer;
+}
+
+.countryCard:active {
+    background-color: #009CFF;
+    color: white;
 }
 
 .countryCard .countryImg {

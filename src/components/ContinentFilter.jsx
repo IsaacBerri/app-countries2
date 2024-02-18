@@ -26,7 +26,7 @@ const ContinentFilter = ({ setCodeContinent, handleActive }) => {
               </article>
               <article className="filterItem" onClick={() => {setCodeContinent("OC"), handleActive()}}>
                 <img src="https://i.postimg.cc/VkH4WhvX/Oceania.png" alt="oceania" />
-                <h4>Ociania</h4>
+                <h4>Oceania</h4>
               </article>
               <article className="filterItem" onClick={() => {setCodeContinent("AF"), handleActive()}}>
                 <img src="https://i.postimg.cc/XqcQK7Bv/Africa.png" alt="africa" />
