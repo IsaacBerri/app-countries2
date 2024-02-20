@@ -1,15 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ContextRenderCountryInfo } from "../context/ContextRenderCountryInfo";
+import useGetImageCountry from "../hooks/useGetImageCountry";
 
 const CountryCard = ({ country }) => {
-
   const { setRender, setCountry } = useContext(ContextRenderCountryInfo);
+  const {imageUrl} = useGetImageCountry(country.name)
 
   return (
-    <article className="countryCard" onClick={() => {setRender(true), setCountry(country)}}>
+    <article
+      className="countryCard"
+      onClick={() => {
+        setRender(true), setCountry(country);
+      }}
+    >
       <img
         className="countryImg"
-        src="https://media.istockphoto.com/id/802893644/es/foto/vista-a%C3%A9rea-del-centro-de-la-ciudad-de-miami-florida.jpg?s=612x612&w=0&k=20&c=sqJ68Fq3DusnWI-4o4R_x7Xx5vW0lRwhSbni87G9NCg="
+        src={imageUrl}
         alt=""
       />
       <div className="countryInfo">

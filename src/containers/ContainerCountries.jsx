@@ -18,8 +18,7 @@ const ContainerCountries = () => {
     prevPage,
     currentPage,
     indexOfLastCountry,
-  } = usePagination(countries, 9);
-
+  } = usePagination(countries, 9);;
 
   return (
     <>
