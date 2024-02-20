@@ -53,4 +53,17 @@ router.delete("/country/:code", (req, res) => {
         })
 })
 
+router.put("/country/:code", (req, res) => {
+    const { code } = req.params;
+    const body = req.body;
+    CountryModel.updateOne({ "code": code }, body)
+        .then((country) => {
+            if (country) {
+                res.status(200).json({ message: "Pais actualizado", country: body });
+            } else {
+                res.status(400).json({ error: "Pais no encontrado" });
+            }
+        })
+})
+
 module.exports = router

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import { ContextGetCountryAPI } from "../context/ContextGetCountryAPI";
-import { ContextGetCountryDB } from "../context/ContextGetCountryDB";
+import { ContextGetCountryAPI } from "../context/ContextGetCountryAPI.jsx";
+import { ContextGetCountryDB } from "../context/ContextGetCountryDB.jsx";
 
 const HeaderInput = ({ setType }) => {
   const [inputValue, setInputValue] = useState("");

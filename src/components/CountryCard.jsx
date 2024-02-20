@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
-import { ContextRenderCountryInfo } from "../context/ContextRenderCountryInfo";
-import useGetImageCountry from "../hooks/useGetImageCountry";
+import React, { useContext } from "react";
+import { ContextRenderCountryInfo } from "../context/ContextRenderCountryInfo.jsx";
+import useGetImageCountry from "../hooks/useGetImageCountry.jsx";
 
 const CountryCard = ({ country }) => {
   const { setRender, setCountry } = useContext(ContextRenderCountryInfo);

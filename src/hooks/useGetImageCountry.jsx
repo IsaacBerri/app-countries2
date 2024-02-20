@@ -8,7 +8,7 @@ function useGetImageCountry(country) {
       const countryName = country;
       const category = "places, city";
       const URL = `https://pixabay.com/api/?key=${API_KEY}&q=${countryName}&image_type=photo&category=${category}`;
-  
+
       fetch(URL)
         .then((response) => response.json())
         .then((data) => {

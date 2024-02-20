@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import { ContextGetCountriesDB } from "../context/ContextGetCountriesDB";
-import ContinentFilter from "./ContinentFilter";
+import { ContextGetCountriesDB } from "../context/ContextGetCountriesDB.jsx";
+import ContinentFilter from "./ContinentFilter.jsx";
 
 const HeaderHome = () => {
   const [active, setActive] = useState(false);

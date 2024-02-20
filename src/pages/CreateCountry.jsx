@@ -3,7 +3,7 @@ import "../styles/CreateCountry.css";
 import InputsFile from "../components/InputsFile.jsx";
 import Buttons from "../components/Buttons.jsx";
 import { ContextGetCountryAPI } from "../context/ContextGetCountryAPI.jsx";
-import HeaderInput from './../components/HeaderInput';
+import HeaderInput from './../components/HeaderInput.jsx';
 
 const CreateCountry = () => {
   const { country, handleResetCountry } = useContext(ContextGetCountryAPI);

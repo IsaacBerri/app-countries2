@@ -1,10 +1,17 @@
-import React from "react";
-import { usePostCountryBD } from "../hooks/usePostCountryBD";
-import { useDeleteCountryDB } from "../hooks/useDeleteCountryDB";
+import React, { useEffect } from "react";
+import { usePostCountryBD } from "../hooks/usePostCountryBD.jsx";
+import { useDeleteCountryDB } from "../hooks/useDeleteCountryDB.jsx";
+import useUpdateCountryDB from "../hooks/useUpdateCountryDB.jsx";
 
-const Buttons = ({ country, handleResetCountry, typeRender }) => {
+const Buttons = ({
+  country,
+  handleResetCountry,
+  typeRender,
+  handleResetCountryDB,
+}) => {
   const { handlePostCountry } = usePostCountryBD();
   const { handleDeleteCountry } = useDeleteCountryDB();
+  const { handleUpdateCountry } = useUpdateCountryDB();
 
   return (
     <div className="buttons">
@@ -13,14 +20,22 @@ const Buttons = ({ country, handleResetCountry, typeRender }) => {
         onClick={
           typeRender === "create"
             ? handleResetCountry
-            : () => handleDeleteCountry(country)
+            : () => {
+                handleDeleteCountry(country), handleResetCountryDB();
+              }
         }
       >
         {typeRender === "create" ? "Reset" : "Delete"}
       </button>
       <button
         className="btnSearch btn2"
-        onClick={() => handlePostCountry(country)}
+        onClick={
+          typeRender === "create"
+            ? () => handlePostCountry(country)
+            : () => {
+                handleUpdateCountry(country), handleResetCountryDB();
+              }
+        }
       >
         {typeRender === "create" ? "Add" : "Update"}
       </button>

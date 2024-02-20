@@ -1,7 +1,7 @@
 import React  from 'react'
 import '../styles/Home.css'
-import HeaderHome from '../components/HeaderHome'
-import ContainerCountries from '../containers/ContainerCountries'
+import HeaderHome from '../components/HeaderHome.jsx'
+import ContainerCountries from '../containers/ContainerCountries.jsx'
 
 const Home = () => {
 

@@ -1,10 +1,10 @@
 import "../styles/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
-import Navbar from "./../components/Navbar";
+import Navbar from "./../components/Navbar.jsx";
 import Home from "../pages/Home";
-import CreateCountry from "../pages/CreateCountry";
-import ManageCountry from "../pages/ManageCountry";
+import CreateCountry from "../pages/CreateCountry.jsx";
+import ManageCountry from "../pages/ManageCountry.jsx";
 
 function App() {
   return (

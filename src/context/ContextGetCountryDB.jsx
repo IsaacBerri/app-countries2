@@ -1,10 +1,14 @@
 import { toast } from "react-toastify";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
 export const ContextGetCountryDB = createContext();
 
 export const ProviderGetCountryDB = ({ children }) => {
   const [country, setCountry] = useState({});
+
+  function handleResetCountryDB() {
+    setCountry({});
+  }
 
   function handleConsult(codeCountry) {
     fetch(`http://localhost:3001/countries/country/${codeCountry}`)
@@ -22,6 +26,7 @@ export const ProviderGetCountryDB = ({ children }) => {
       value={{
         country,
         handleConsult,
+        handleResetCountryDB,
       }}
     >
       {children}
