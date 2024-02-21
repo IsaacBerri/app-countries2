@@ -7,7 +7,7 @@ function useUpdateCountryDB() {
   const [newCountry, setNewCountry] = useState({});
   function handleUpdateCountry(country) {
     console.log("country", newCountry);
-    fetch(`http://localhost:3001/countries/country/${country.code}`, {
+    fetch(`https://server-express-one.vercel.app/countries/country/${country.code}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

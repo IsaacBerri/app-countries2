@@ -2,7 +2,7 @@ import { toast } from 'react-toastify';
 
 export function useDeleteCountryDB() {
   function handleDeleteCountry(country) {
-    fetch(`http://localhost:3001/countries/country/${country.code}`, {
+    fetch(`https://server-express-one.vercel.app/countries/country/${country.code}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

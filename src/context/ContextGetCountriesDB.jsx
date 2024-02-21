@@ -11,11 +11,11 @@ export function ProviderGetCountriesDB({ children }) {
 
   useEffect(() => {
     if (codeContinent === "All") {
-      fetch("http://localhost:3001/countries")
+      fetch("https://server-express-one.vercel.app/countries")
         .then((response) => response.json())
         .then((data) => setCountries(data));
     } else {
-      fetch(`http://localhost:3001/countries/continent/${codeContinent}`)
+      fetch(`https://server-express-one.vercel.app/countries/continent/${codeContinent}`)
         .then((response) => response.json())
         .then((data) => setCountries(data));
     }

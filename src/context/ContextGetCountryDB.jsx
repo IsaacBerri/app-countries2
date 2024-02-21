@@ -11,7 +11,7 @@ export const ProviderGetCountryDB = ({ children }) => {
   }
 
   function handleConsult(codeCountry) {
-    fetch(`http://localhost:3001/countries/country/${codeCountry}`)
+    fetch(`https://server-express-one.vercel.app/countries/country/${codeCountry}`)
       .then((response) => {
         if (!response.ok) {
           toast.error("The country is not found in the database");
