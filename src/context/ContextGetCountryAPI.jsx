@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react";
 export const ContextGetCountryAPI = createContext();
 
 export const ProviderGetCountryAPI = ({ children }) => {
-  const [country, setCountry] = useState({});
+  const [countryAPI, setCountryAPI] = useState({});
   const [code, setCode] = useState("");
   useEffect(() => {
     fetch("https://countries.trevorblades.com/", {
@@ -36,18 +36,18 @@ export const ProviderGetCountryAPI = ({ children }) => {
       }),
     })
       .then((res) => res.json())
-      .then((data) => setCountry(data.data.country))
+      .then((data) => setCountryAPI(data.data.country))
       .catch((error) => console.log(error));
   }, [code]);
 
   const handleResetCountry = () => {
-    setCountry(null);
+    setCountryAPI(null);
   }
 
   return (
     <ContextGetCountryAPI.Provider
       value={{
-        country,
+        countryAPI,
         handleResetCountry,
         setCode,
       }}

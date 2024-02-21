@@ -17,6 +17,12 @@
     text-align: center;
 }
 
+.formInputs{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
 .inputsFile {
     width: 100%;
     display: flex;

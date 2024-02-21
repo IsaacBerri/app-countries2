@@ -4,10 +4,10 @@ import { createContext, useState } from "react";
 export const ContextGetCountryDB = createContext();
 
 export const ProviderGetCountryDB = ({ children }) => {
-  const [country, setCountry] = useState({});
+  const [countryDB, setCountryDB] = useState({});
 
   function handleResetCountryDB() {
-    setCountry({});
+    setCountryDB({});
   }
 
   function handleConsult(codeCountry) {
@@ -18,13 +18,13 @@ export const ProviderGetCountryDB = ({ children }) => {
         }
         return response.json();
       })
-      .then((data) => setCountry(data));
+      .then((data) => setCountryDB(data));
   }
 
   return (
     <ContextGetCountryDB.Provider
       value={{
-        country,
+        countryDB,
         handleConsult,
         handleResetCountryDB,
       }}

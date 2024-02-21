@@ -1,12 +1,9 @@
-import { useState } from "react";
 import { toast } from "react-toastify";
 
 
 
 function useUpdateCountryDB() {
-  const [newCountry, setNewCountry] = useState({});
-  function handleUpdateCountry(country) {
-    console.log("country", newCountry);
+  function handleUpdateCountry(country, newCountry) {
     fetch(`https://server-express-one.vercel.app/countries/country/${country.code}`, {
       method: "PUT",
       headers: {
@@ -24,7 +21,7 @@ function useUpdateCountryDB() {
       .catch((error) => console.error(error));
   }
 
-  return { handleUpdateCountry, setNewCountry };
+  return { handleUpdateCountry };
 }
 
 export default useUpdateCountryDB;
