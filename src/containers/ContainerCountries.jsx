@@ -12,13 +12,22 @@ const ContainerCountries = () => {
   useEffect(() => {
     setUpdate(!update);
   }, [])
+
+  const innerWidth = () => {
+    if (window.innerWidth <= 500) {
+      return 4
+    }else{
+      return 9;
+    }
+  }
+
   const {
     currentCountries,
     nextPage,
     prevPage,
     currentPage,
     indexOfLastCountry,
-  } = usePagination(countries, 9);;
+  } = usePagination(countries, innerWidth());
 
   return (
     <>

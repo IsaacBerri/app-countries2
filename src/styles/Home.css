@@ -236,18 +236,40 @@
 }
 
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
     .home {
         height: auto;
     }
-}
+} */
 
 @media (max-width: 500px) {
+
+    .home {
+        height: 150vh;
+    }
+
+    .headerHome {
+        width: 100%;
+    }
+
     .btnSearch {
         width: 70px;
     }
     .btnSearch span {
         display: none;
+    }
+
+    .filterContainer {
+        width: 100%;
+    }
+
+    .filterBody {
+        justify-content: center;
+        padding: 10px 0 0 0;
+    }
+    .filterBody .filterItem {
+        width: 130px;
+        height: 130px;
     }
 
     .renderCountryInfo {

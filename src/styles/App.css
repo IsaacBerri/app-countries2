@@ -62,9 +62,6 @@
 }
 
 .logo {
-  height: 140px;
-  height: 140px;
-  padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
@@ -102,3 +99,29 @@
     height: 100px;
   }
 }
+
+@media (max-width: 500px) {
+  .navbar {
+    padding: 0;
+  }
+
+  .containerLogo {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .containerLogo .logo {
+    width: 80%;
+    height: 80%;
+  }
+
+  .navbar ul li{
+    width: 30%;
+    font-size: 13px;
+  }
+}
+
+
