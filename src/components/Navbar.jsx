@@ -9,7 +9,7 @@ const Navbar = () => {
       <picture className="containerLogo">
         <img
           className="logo"
-          src="https://1000logos.net/wp-content/uploads/2021/10/logo-Meta.png"
+          src="https://i.postimg.cc/4x2FDZ9w/logo-Meta.png"
           alt=""
         />
       </picture>
